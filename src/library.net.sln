@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{BA5980
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Net.Data.NHibernate", "Library.Net.Data.NHibernate\Library.Net.Data.NHibernate.csproj", "{FC68681F-F552-442F-8FDC-0696D1CDB7D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{06767B1B-B853-4E1C-A9D7-F13B77345F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06767B1B-B853-4E1C-A9D7-F13B77345F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06767B1B-B853-4E1C-A9D7-F13B77345F30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC68681F-F552-442F-8FDC-0696D1CDB7D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC68681F-F552-442F-8FDC-0696D1CDB7D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC68681F-F552-442F-8FDC-0696D1CDB7D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC68681F-F552-442F-8FDC-0696D1CDB7D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
