@@ -50,6 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\IQuery.cs" />
+    <Compile Include="Data\IQueryFactory.cs" />
+    <Compile Include="IoC\IDependencyContainer.cs" />
+    <Compile Include="IoC\DependencyContainerHelper.cs" />
     <Compile Include="Mvc\Attributes\AjaxOnlyAttribute.cs" />
     <Compile Include="Mvc\Attributes\ButtonAttribute.cs" />
     <Compile Include="Mvc\Attributes\NoCacheAttribute.cs" />
