@@ -7,7 +7,7 @@ namespace Library.Net.IoC {
         private static IDependencyContainer _container;
 
         public static void Init(IDependencyContainer container) {
-            _container = _container.Configure();
+            _container = container.Configure();
         }
 
         public static T Get<T>() {
