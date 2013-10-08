@@ -13,7 +13,7 @@
     <copyright>Copyright Júnior Oliveira 2013</copyright>
     <tags>NHibernate NH AspNetMvc</tags>
     <dependencies>
-      <dependency id="Library.Net" version="1.0.0.0" />
+      <dependency id="Library.Net" version="1.0.0.1" />
       <dependency id="NHibernate" version="3.3.3.4001" />
     </dependencies>
   </metadata>
