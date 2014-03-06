@@ -9,11 +9,10 @@
     <projectUrl>https://github.com/junioro/library.net</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
-    <copyright>Copyright Júnior Oliveira 2013</copyright>
+    <copyright>Copyright Júnior Oliveira 2014</copyright>
     <tags>NHibernate NH AspNetMvc</tags>
     <dependencies>
-      <dependency id="Library.Net" version="1.0.0.1" />
+      <dependency id="Library.Net.IoC" version="1.0.0.0" />
       <dependency id="NHibernate" version="3.3.3.4001" />
     </dependencies>
   </metadata>

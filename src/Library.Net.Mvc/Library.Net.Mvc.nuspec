@@ -9,8 +9,10 @@
     <projectUrl>https://github.com/junioro/library.net</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
-    <copyright>Copyright Júnior Oliveira 2014</copyright>
-    <tags></tags>
+    <copyright>Copyright Júnior Oliveira 2013</copyright>
+    <tags>AspNetMvc</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="6.0.1" />
+    </dependencies>
   </metadata>
 </package>
