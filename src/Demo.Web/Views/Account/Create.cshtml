@@ -1,0 +1,56 @@
+﻿@model Demo.Web.Models.Account.CreateViewModel
+@{
+    ViewBag.Title = "Criar conta";
+    Layout = "~/Views/shared/_LayoutEmpty.cshtml";
+}
+<h4><span class="text-info">projeto</span><small> criar conta</small></h4>
+<hr />
+@using (Html.BeginForm()) {
+    Html.ValidationSummary(true);
+    <fieldset class="form-horizontal">
+        <div class="control-group">
+            @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+            <div class="controls">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-user"></i></span>
+                    @Html.TextBoxFor(m => m.Name, new { @class = "input-xlarge" })
+                </div>
+                @Html.ValidationMessageFor(m => m.Name, null, new { @class = "help-inline" })
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+            <div class="controls">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-envelope"></i></span>
+                    @Html.TextBoxFor(m => m.Email, new { @class = "input-xlarge" })
+                </div>
+                @Html.ValidationMessageFor(m => m.Email, null, new { @class = "help-inline" })
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+            <div class="controls">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-lock"></i></span>
+                    @Html.PasswordFor(m => m.Password, new { @class = "input-xlarge" })
+                </div>                
+                @Html.ValidationMessageFor(m => m.Password, null, new { @class = "help-inline" })
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
+            <div class="controls">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-lock"></i></span>
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "input-xlarge" })
+                </div>                
+                @Html.ValidationMessageFor(m => m.ConfirmPassword, null, new { @class = "help-inline" })
+            </div>
+        </div>
+        <div class="form-actions">
+            <a class="btn btn-link" href="@Url.Action("LogOn", "Login")"><i class="icon-circle-arrow-left"></i> Voltar</a>
+            <button type="submit" class="btn btn-success pull-right"><i class="icon-ok-sign icon-white"></i> Enviar</button>
+        </div>
+    </fieldset>
+}

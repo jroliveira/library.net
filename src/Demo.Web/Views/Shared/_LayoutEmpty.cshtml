@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="@Styles.Url("~/Content/layout-empty.css")" rel="stylesheet"/>
+    @RenderSection("head", false)
+    @Html.Partial("_html5shiv")
+</head>
+<body>
+    <div id="wrap">
+        <article>
+            <div class="container">
+                @Html.Partial("_alerts")
+                @RenderBody()
+            </div>
+        </article>
+        <footer>
+            <div class="container">
+                <p class="pull-left">&copy; <a href="http://junioro.wordpress.com" rel="author">Júnior Oliveira</a> @DateTime.Now.ToString("yyyy").</p>
+                <p class="pull-right">projeto</p>
+            </div>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/js")
+    @RenderSection("scripts", false)
+</body>
+</html>
