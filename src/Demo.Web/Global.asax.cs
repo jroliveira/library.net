@@ -6,6 +6,7 @@ using System.Web.Routing;
 using Demo.Infrastructure.IoC;
 using Demo.Web.App_Start;
 using Library.Net.IoC;
+using Library.Net.IoC.Mvc;
 using Library.Net.Mvc.Formatters;
 
 namespace Demo.Web {

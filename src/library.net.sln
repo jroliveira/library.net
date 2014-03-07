@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Web", "Demo.Web\Demo.Web.csproj", "{E21DC45E-795C-463C-BE23-C5C81732FA00}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Net.IoC.StructureMap", "Library.Net.IoC.StructureMap\Library.Net.IoC.StructureMap.csproj", "{30005A9A-24C6-4278-9013-0DC6BB939E85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +66,10 @@ Global
 		{E21DC45E-795C-463C-BE23-C5C81732FA00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E21DC45E-795C-463C-BE23-C5C81732FA00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E21DC45E-795C-463C-BE23-C5C81732FA00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30005A9A-24C6-4278-9013-0DC6BB939E85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30005A9A-24C6-4278-9013-0DC6BB939E85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30005A9A-24C6-4278-9013-0DC6BB939E85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30005A9A-24C6-4278-9013-0DC6BB939E85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

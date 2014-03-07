@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Web.Mvc;
 using System.Web.Routing;
-using Library.Net.IoC;
 
-namespace Demo.Web.App_Start {
+namespace Library.Net.IoC.Mvc {
 
     public class StructureMapControllerFactory : DefaultControllerFactory {
 

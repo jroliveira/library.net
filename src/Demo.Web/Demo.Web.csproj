@@ -54,10 +54,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Library.Net.Elmah.1.0.0.1\lib\net45\Library.Net.Elmah.dll</HintPath>
     </Reference>
-    <Reference Include="Library.Net.IoC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Library.Net.IoC.1.0.0.0\lib\net45\Library.Net.IoC.dll</HintPath>
-    </Reference>
     <Reference Include="Library.Net.Mvc, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Library.Net.Mvc.1.0.0.1\lib\net45\Library.Net.Mvc.dll</HintPath>
@@ -147,7 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\StructureMapControllerFactory.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -239,7 +234,6 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
-    <Content Include="NuGet.exe" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -290,6 +284,14 @@
     <ProjectReference Include="..\Demo\Demo.csproj">
       <Project>{34337581-68AC-4596-BCFE-A96B45E5682B}</Project>
       <Name>Demo %28demo\Demo%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library.Net.IoC.StructureMap\Library.Net.IoC.StructureMap.csproj">
+      <Project>{30005A9A-24C6-4278-9013-0DC6BB939E85}</Project>
+      <Name>Library.Net.IoC.StructureMap</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library.Net.IoC\Library.Net.IoC.csproj">
+      <Project>{A0D5540D-3828-4106-A5DF-44CC0997E65E}</Project>
+      <Name>Library.Net.IoC</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

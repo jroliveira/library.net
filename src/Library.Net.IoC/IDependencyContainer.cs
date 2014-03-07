@@ -6,6 +6,6 @@ namespace Library.Net.IoC {
 
         T Get<T>();
         object Get(Type type);
-        IDependencyContainer Configure();
+        void Configure();
     }
 }

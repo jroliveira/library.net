@@ -35,10 +35,8 @@
     <Reference Include="Library.Net.Data">
       <HintPath>..\packages\Library.Net.Data.1.0.0.0\lib\net45\Library.Net.Data.dll</HintPath>
     </Reference>
-    <Reference Include="Library.Net.IoC">
-      <HintPath>..\packages\Library.Net.IoC.1.0.0.0\lib\net45\Library.Net.IoC.dll</HintPath>
-    </Reference>
-    <Reference Include="StructureMap">
+    <Reference Include="StructureMap, Version=2.6.4.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -63,6 +61,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library.Net.IoC.StructureMap\Library.Net.IoC.StructureMap.csproj">
+      <Project>{30005a9a-24c6-4278-9013-0dc6bb939e85}</Project>
+      <Name>Library.Net.IoC.StructureMap</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library.Net.IoC\Library.Net.IoC.csproj">
+      <Project>{a0d5540d-3828-4106-a5df-44cc0997e65e}</Project>
+      <Name>Library.Net.IoC</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
