@@ -1,4 +1,5 @@
-﻿@using appsimple.mvc.bootstrap.Lib.Extensions
+﻿@using Demo.Web.Lib.Authentication
+@using Library.Net.Mvc.Authentication
 
 <!DOCTYPE html>
 <html>
@@ -12,7 +13,7 @@
     @Html.Partial("_html5shiv")
 </head>
 <body>
-    @{ var user = User.ToLoggedUser(); }
+    @{ var user = new CurrentAuthenticatedUser<AuthenticatedUser>().Get(); }
     <div id="wrap">
         <header>
             <div class="navbar navbar-inverse navbar-fixed-top">
