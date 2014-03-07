@@ -9,9 +9,13 @@ namespace Library.Net.Elmah.Mvc {
 
     public class ElmahUsersAttribute : ActionMethodSelectorAttribute {
 
+        private ICurrentAuthenticatedUser<IAuthenticatedUser> _currentAuthenticatedUser = new CurrentAuthenticatedUser<IAuthenticatedUser>();
+        public void SetCurrentAuthenticatedUser(ICurrentAuthenticatedUser<IAuthenticatedUser> currentAuthenticatedUser) {
+            _currentAuthenticatedUser = currentAuthenticatedUser;
+        }
+
         public override bool IsValidForRequest(ControllerContext controllerContext, MethodInfo methodInfo) {
-            ICurrentAuthenticatedUser<IAuthenticatedUser> currentAuthenticatedUser = new CurrentAuthenticatedUser<IAuthenticatedUser>();
-            var authenticatedUser = currentAuthenticatedUser.Get();
+            var authenticatedUser = _currentAuthenticatedUser.Get();
             var elmahUsers = ConfigurationManager.AppSettings["Elmah:Users"];
             return elmahUsers.Split(',').Any(authenticatedUser.Id.ToString(CultureInfo.InvariantCulture).Equals);
         }
