@@ -4,24 +4,48 @@ namespace Library.Net.Mvc.Controllers {
 
     public class BaseController : Controller {
 
-        public void Attention(string message) {
+        public ActionResult Attention(string message, ActionResult actionResult) {
             TempData.Clear();
             TempData.Add(Alerts.ATTENTION, message);
+
+            return actionResult;
+        }
+
+        public void Attention(string message) {
+            Attention(message, null);
+        }
+
+        public ActionResult Success(string message, ActionResult actionResult) {
+            TempData.Clear();
+            TempData.Add(Alerts.SUCCESS, message);
+
+            return actionResult;
         }
 
         public void Success(string message) {
+            Success(message, null);
+        }
+
+        public ActionResult Information(string message, ActionResult actionResult) {
             TempData.Clear();
-            TempData.Add(Alerts.SUCCESS, message);
+            TempData.Add(Alerts.INFORMATION, message);
+
+            return actionResult;
         }
 
         public void Information(string message) {
+            Information(message, null);
+        }
+
+        public ActionResult Error(string message, ActionResult actionResult) {
             TempData.Clear();
-            TempData.Add(Alerts.INFORMATION, message);
+            TempData.Add(Alerts.ERROR, message);
+
+            return actionResult;
         }
 
         public void Error(string message) {
-            TempData.Clear();
-            TempData.Add(Alerts.ERROR, message);
+            Error(message, null);
         }
     }
 }

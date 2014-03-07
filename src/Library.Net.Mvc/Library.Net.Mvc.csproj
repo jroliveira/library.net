@@ -59,6 +59,7 @@
     <Compile Include="Authentication\IAuthenticatedUser.cs" />
     <Compile Include="Authentication\ICurrentAuthenticatedUser.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Extensions\HttpServerUtilityBaseExtension.cs" />
     <Compile Include="Extensions\MediaTypeFormatterCollectionExtensions.cs" />
     <Compile Include="Formatters\IFormatterRegister.cs" />
     <Compile Include="Formatters\JsonpFormatter.cs" />
