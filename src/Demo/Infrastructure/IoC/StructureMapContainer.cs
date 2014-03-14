@@ -6,10 +6,10 @@ using StructureMap;
 
 namespace Demo.Infrastructure.IoC {
 
-    public class StructureMapContainer : StructureMapTemplate {
+    public sealed class StructureMapContainer : StructureMapTemplate {
 
-        public override void Configure() {
-            Container = new Container(registry => {
+        protected override IContainer ConfigureDependencies() {
+            return new Container(registry => {
                 /* Db Session */
 
 

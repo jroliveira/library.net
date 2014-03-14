@@ -5,16 +5,20 @@ namespace Library.Net.IoC.StructureMap {
 
     public abstract class StructureMapTemplate : IDependencyContainer {
 
-        protected IContainer Container;
+        private IContainer _container;
 
         public T Get<T>() {
-            return Container.GetInstance<T>();
+            return _container.GetInstance<T>();
         }
 
         public object Get(Type type) {
-            return Container.GetInstance(type);
+            return _container.GetInstance(type);
         }
 
-        public abstract void Configure();
+        public void Configure() {
+            _container = ConfigureDependencies();
+        }
+
+        protected abstract IContainer ConfigureDependencies();
     }
 }

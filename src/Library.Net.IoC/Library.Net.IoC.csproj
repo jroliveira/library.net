@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="DependencyContainerHelper.cs" />
     <Compile Include="IDependencyContainer.cs" />
-    <Compile Include="Mvc\StructureMapControllerFactory.cs" />
+    <Compile Include="Mvc\DependencyContainerControllerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

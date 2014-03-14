@@ -4,7 +4,7 @@ using System.Web.Routing;
 
 namespace Library.Net.IoC.Mvc {
 
-    public class StructureMapControllerFactory : DefaultControllerFactory {
+    public class DependencyContainerControllerFactory : DefaultControllerFactory {
 
         protected override IController GetControllerInstance(RequestContext requestContext, Type controllerType) {
             if (controllerType == null) return null;

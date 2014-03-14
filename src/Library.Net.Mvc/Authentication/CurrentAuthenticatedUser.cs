@@ -10,6 +10,7 @@ namespace Library.Net.Mvc.Authentication {
 
         private static T Deserialize(string data) {
             var serializer = new JavaScriptSerializer();
+
             return serializer.Deserialize<T>(data);
         }
 

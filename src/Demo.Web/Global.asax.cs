@@ -26,7 +26,7 @@ namespace Demo.Web {
             new JsonpFormatterRegister().Register(GlobalConfiguration.Configuration.Formatters);
 
             DependencyContainerHelper.Init(new StructureMapContainer());
-            ControllerBuilder.Current.SetControllerFactory(new StructureMapControllerFactory());
+            ControllerBuilder.Current.SetControllerFactory(new DependencyContainerControllerFactory());
         }
     }
 }
