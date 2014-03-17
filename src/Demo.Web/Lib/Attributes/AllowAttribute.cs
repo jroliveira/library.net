@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Security;
 using System.Web;
 using System.Web.Mvc;
 using Demo.Infrastructure.Data.Queries.PermissionQuery;
@@ -12,6 +11,16 @@ namespace Demo.Web.Lib.Attributes {
 
         public AllowAttribute(IHasPermissionQuery hasPermissionQuery) {
             _hasPermissionQuery = hasPermissionQuery;
+        }
+
+        protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext) {
+            var user = filterContext.HttpContext.User;
+            if (!user.Identity.IsAuthenticated) {
+                filterContext.Result = new RedirectToRouteResult("LogOn", null);
+                return;
+            }
+
+            base.HandleUnauthorizedRequest(filterContext);
         }
 
         protected override bool AuthorizeCore(HttpContextBase httpContext) {
