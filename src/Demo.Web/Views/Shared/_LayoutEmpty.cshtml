@@ -1,32 +1,60 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-    <link href="@Styles.Url("~/Content/layout-empty.css")" rel="stylesheet"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="shortcut icon" href="#" />
+    @Styles.Render("~/css")
+
     @RenderSection("head", false)
     @Html.Partial("_html5shiv")
+
+    <style type="text/css">
+        .vertical-offset-100 {
+            padding-top: 100px;
+        }
+    </style>
 </head>
 <body>
     <div id="wrap">
+        <header>
+            <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="@Url.Action("Index", "Home")">projeto</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
         <article>
             <div class="container">
                 @Html.Partial("_alerts")
+
                 @RenderBody()
             </div>
         </article>
-        <footer>
-            <div class="container">
-                <p class="pull-left">&copy; <a href="http://junioro.wordpress.com" rel="author">Júnior Oliveira</a> @DateTime.Now.ToString("yyyy").</p>
-                <p class="pull-right">projeto</p>
-            </div>
-        </footer>
+
+        <div id="push"></div>
     </div>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
+
+    <div id="footer">
+        <div class="container">
+            <p class="muted credit">&copy; <a href="http://junioro.wordpress.com" rel="author">Júnior Oliveira</a> @DateTime.Now.ToString("yyyy").</p>
+        </div>
+    </div>
+
     @Scripts.Render("~/js")
     @RenderSection("scripts", false)
 </body>

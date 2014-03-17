@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Demo.Web.Lib.Validations;
+using Library.Net.Mvc.Models;
 
 namespace Demo.Web.Models.Account {
 

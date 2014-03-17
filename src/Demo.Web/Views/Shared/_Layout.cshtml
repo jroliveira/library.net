@@ -1,70 +1,76 @@
 ﻿@using Demo.Web.Lib.Authentication
 @using Library.Net.Mvc.Authentication
+@{ var user = new CurrentAuthenticatedUser<AuthenticatedUser>().Get(); }
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="shortcut icon" href="#" />
+    @Styles.Render("~/css")
+
     @RenderSection("head", false)
     @Html.Partial("_html5shiv")
 </head>
 <body>
-    @{ var user = new CurrentAuthenticatedUser<AuthenticatedUser>().Get(); }
     <div id="wrap">
         <header>
-            <div class="navbar navbar-inverse navbar-fixed-top">
-                <div class="navbar-inner">
-                    <div class="container">
-                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
-                        </a>
-                        <a class="brand" href="@Url.Action("Index","Home")" title="finance">
-                            projeto
-                        </a>
-                        <div class="nav-collapse collapse">
-                            <ul class="nav">
-                                <li class="divider-vertical"></li>
-                            </ul>
-                            <ul class="nav pull-right">
-                                <li class="divider-vertical"></li>
-                                <li class="dropdown">
-                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-user icon-white"></i> @user.Email &nbsp; <b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="@Url.Action("Edit", "Account")"><i class="icon-edit"></i> Editar conta</a></li>
-                                        <li><a href="@Url.Action("ChangePassword", "Account")"><i class="icon-lock"></i> Alterar senha</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="@Url.Action("LogOff", "Login")"><i class="icon-off"></i> Sair</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
+                        </button>
+                        <a class="navbar-brand" href="@Url.Action("Index", "Home")">projeto</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            @*<li><a href="#"><span class="glyphicon glyphicon-plane"></span> Cadastrar</a></li>*@
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">@user.Email <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="@Url.Action("Edit", "Account")"><span class="glyphicon glyphicon-edit"></span>&nbsp; Editar conta</a></li>
+                                    <li><a href="@Url.Action("ChangePassword", "Account")"><i class="glyphicon glyphicon-lock"></i>&nbsp; Alterar senha</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="@Url.Action("LogOff", "Login")"><span class="glyphicon glyphicon-log-out"></span>&nbsp; Sair</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </header>
+
         <article>
             <div class="container">
-                @Html.Partial("_alerts") 
+                @Html.Partial("_alerts")
                 @Html.Partial("_validationSummary")
+
                 @RenderBody()
             </div>
         </article>
-        <footer>
-            <div class="container">
-                <p class="pull-left">&copy; <a href="http://junioro.wordpress.com" rel="author">Júnior Oliveira</a> @DateTime.Now.ToString("yyyy").</p>
-                <p class="pull-right">projeto</p>
-            </div>
-        </footer>
+
+        <div id="push"></div>
     </div>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
+
+    <div id="footer">
+        <div class="container">
+            <p class="muted credit">&copy; <a href="http://junioro.wordpress.com" rel="author">Júnior Oliveira</a> @DateTime.Now.ToString("yyyy").</p>
+        </div>
+    </div>
+
     @Scripts.Render("~/js")
-    @RenderSection("scripts", required: false)
+    @RenderSection("scripts", false)
 </body>
 </html>

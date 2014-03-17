@@ -4,12 +4,12 @@ using System.Text;
 using System.Web.Mvc;
 using Demo.Domain.Entities;
 using Demo.Domain.Services;
-using Demo.Infrastructure.Data.Queries;
-using Demo.Web.Lib.Extensions;
+using Demo.Infrastructure.Data.Queries.AccountQuery;
 using Demo.Web.Models.Account;
 using Library.Net.Data;
 using Library.Net.Mvc.Attributes;
 using Library.Net.Mvc.Controllers;
+using Library.Net.Mvc.Extensions;
 
 namespace Demo.Web.Controllers {
 
@@ -24,13 +24,13 @@ namespace Demo.Web.Controllers {
         }
 
         private Account GetAccount(string email) {
-            var query = _queryFactory.CreateQuery<AccountGetByEmailQuery>();
+            var query = _queryFactory.CreateQuery<GetByEmailQuery>();
             query.Email = email;
             return query.GetResult();
         }
 
         private bool EmailExists(string email) {
-            var query = _queryFactory.CreateQuery<AccountGetByEmailQuery>();
+            var query = _queryFactory.CreateQuery<GetByEmailQuery>();
             query.Email = email;
             return query.GetResult() != null;
         }
@@ -58,11 +58,13 @@ namespace Demo.Web.Controllers {
         #endregion
 
         [HttpGet]
+        [AllowAnonymous]
         public ActionResult Create() {
             return View();
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult Create(CreateViewModel viewModel) {
             if (!ModelState.IsValid) return Error("Existem campos para preencher.", View(viewModel));
 
@@ -79,17 +81,18 @@ namespace Demo.Web.Controllers {
         }
 
         [HttpGet]
-        [Authorize]
         public ActionResult Edit() {
             throw new NotImplementedException();
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public ActionResult ForgotPassword() {
             return View();
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult ForgotPassword(ForgotPasswordViewModel viewModel) {
             if (!ModelState.IsValid) return Error("Existem campos para preencher.", View(viewModel));
 
@@ -110,17 +113,15 @@ namespace Demo.Web.Controllers {
         }
 
         [HttpGet]
-        [Authorize]
         public ActionResult ChangePassword() {
             return View();
         }
 
         [HttpPost]
-        [Authorize]
         public ActionResult ChangePassword(ChangePasswordViewModel viewModel) {
             if (!ModelState.IsValid) return Error("Existem campos para preencher.", View(viewModel));
 
-            var query = _queryFactory.CreateQuery<AccountGetByIdQuery>();
+            var query = _queryFactory.CreateQuery<GetByIdQuery>();
             query.Id = Convert.ToInt64(User.Identity.Name);
             var account = query.GetResult();
             account.ChangePassword(viewModel.OldPassword, viewModel.NewPassword);

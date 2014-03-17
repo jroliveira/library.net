@@ -1,36 +1,47 @@
 ﻿@model Demo.Web.Models.Login.LogOnViewModel
 @{
-    ViewBag.Title = "Logon";
+    ViewBag.Title = "Entrar";
     Layout = "~/Views/shared/_LayoutEmpty.cshtml";
 }
-<h4><span class="text-info">projeto</span><small> entrar no sistema</small></h4>
+
+<h4>
+    <span class="text-danger">projeto</span> <small>login</small>
+</h4>
+
 <hr />
-@using (Html.BeginForm()) {
-    <fieldset class="form-horizontal">
-        <div class="control-group">
-            @Html.LabelFor(m => m.Email, new { @class = "control-label" })
-            <div class="controls">
-                <div class="input-prepend">
-                    <span class="add-on"><i class="icon-envelope"></i></span>
-                    @Html.TextBoxFor(m => m.Email, new { @class = "input-xlarge" })
-                </div>
-                @Html.ValidationMessageFor(m => m.Email, null, new { @class = "help-inline" })
+
+@using (Html.BeginForm("LogOn", "Login", FormMethod.Post, new { @class = "form-horizontal" })) {
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "col-sm-2 control-label" })
+        <div class="col-sm-4">
+            <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
             </div>
+            @Html.ValidationMessageFor(m => m.Email, null, new { @class = "help-block" })
         </div>
-        <div class="control-group">
-            @Html.LabelFor(m => m.Password, new { @class = "control-label" })
-            <div class="controls">
-                <div class="input-prepend">
-                    <span class="add-on"><i class="icon-lock"></i></span>
-                    @Html.PasswordFor(m => m.Password, new { @class = "input-xlarge" })
-                </div>                
-                @Html.ValidationMessageFor(m => m.Password, null, new { @class = "help-inline" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password, new { @class = "col-sm-2 control-label" })
+        <div class="col-sm-4">
+            <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
             </div>
+            @Html.ValidationMessageFor(m => m.Password, null, new { @class = "help-block" })
         </div>
-        <div class="form-actions">
-            <a class="btn btn-link " href="@Url.Action("ForgotPassword", "Account")"><i class="icon-question-sign"></i> Recuperar senha</a>
-            <button type="submit" class="btn btn-success pull-right"><i class="icon-ok-sign icon-white"></i> Entrar</button>
-            <a class="btn btn-link clearfix" href="@Url.Action("Create", "Account")"><i class="icon-plus-sign"></i> Criar conta</a>
+    </div>
+
+    <hr />
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <a href="@Url.Action("ForgotPassword", "Account")" class="btn btn-link"><span class="glyphicon glyphicon-question-sign"></span>&nbsp; Recuperar senha</a>
+            <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Entrar</button>
+            <br />
+            <a href="@Url.Action("Create", "Account")" class="btn btn-link"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp; Criar conta</a>
         </div>
-    </fieldset>
+    </div>
 }

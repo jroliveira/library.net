@@ -2,15 +2,15 @@
 using Demo.Domain.Entities;
 using Library.Net.Data;
 
-namespace Demo.Infrastructure.Data.Queries {
+namespace Demo.Infrastructure.Data.Queries.AccountQuery {
 
-    public class AccountGetByIdQuery : IQuery<Account> {
+    public class GetByIdQuery : IQuery<Account> {
 
         private readonly dynamic _database;
 
         public long Id { get; set; }
 
-        public AccountGetByIdQuery(dynamic database) {
+        public GetByIdQuery(dynamic database) {
             _database = database;
         }
 

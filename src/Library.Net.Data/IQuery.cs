@@ -6,4 +6,9 @@
 
         TResult GetResult();
     }
+
+    public interface IQuery<out TResult, in TParam> : IQuery {
+
+        TResult GetResult(TParam param);
+    }
 }

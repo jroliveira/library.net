@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Security;
 using Demo.Domain.Entities;
-using Demo.Infrastructure.Data.Queries;
+using Demo.Infrastructure.Data.Queries.AccountQuery;
 using Demo.Web.Lib.Authentication;
 using Demo.Web.Models.Login;
 using Library.Net.Data;
@@ -25,7 +25,7 @@ namespace Demo.Web.Controllers {
         }
 
         private Account GetAccount(string email) {
-            var query = _queryFactory.CreateQuery<AccountGetByEmailQuery>();
+            var query = _queryFactory.CreateQuery<GetByEmailQuery>();
             query.Email = email;
             return query.GetResult();
         }
@@ -40,11 +40,13 @@ namespace Demo.Web.Controllers {
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public ActionResult LogOn() {
             return View();
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult LogOn(LogOnViewModel viewModel, string returnUrl) {
             if (!ModelState.IsValid) return Error("Existem campos para preencher.", View(viewModel));
 
@@ -61,7 +63,6 @@ namespace Demo.Web.Controllers {
         }
 
         [HttpGet]
-        [Authorize]
         public ActionResult LogOff() {
             FormsAuthentication.SignOut();
 

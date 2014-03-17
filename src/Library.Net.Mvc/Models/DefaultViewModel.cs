@@ -1,4 +1,4 @@
-﻿namespace Demo.Web.Models {
+﻿namespace Library.Net.Mvc.Models {
 
     public abstract class DefaultViewModel {
 

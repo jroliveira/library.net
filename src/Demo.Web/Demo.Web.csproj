@@ -47,17 +47,6 @@
     <Reference Include="Elmah">
       <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
     </Reference>
-    <Reference Include="Library.Net.Data">
-      <HintPath>..\packages\Library.Net.Data.1.0.0.0\lib\net45\Library.Net.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Library.Net.Elmah, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Library.Net.Elmah.1.0.0.1\lib\net45\Library.Net.Elmah.dll</HintPath>
-    </Reference>
-    <Reference Include="Library.Net.Mvc, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Library.Net.Mvc.1.0.0.1\lib\net45\Library.Net.Mvc.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -152,31 +141,24 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Lib\Alerts.cs" />
+    <Compile Include="Lib\Attributes\AllowAttribute.cs" />
     <Compile Include="Lib\Authentication\AuthenticatedUser.cs" />
-    <Compile Include="Lib\Extensions\HttpServerUtilityBaseExtension.cs" />
     <Compile Include="Lib\Validations\CompareOldPasswordAttribute.cs" />
     <Compile Include="Models\Account\ChangePasswordViewModel.cs" />
     <Compile Include="Models\Account\CreateViewModel.cs" />
     <Compile Include="Models\Account\ForgotPasswordViewModel.cs" />
-    <Compile Include="Models\DefaultViewModel.cs" />
     <Compile Include="Models\Login\LogOnViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Readme\Elmah.txt" />
-    <Content Include="Content\bootstrap\css\bootstrap-extensions.css" />
-    <Content Include="Content\bootstrap\css\bootstrap-mvc-validation.css" />
-    <Content Include="Content\bootstrap\css\bootstrap-responsive.css" />
-    <Content Include="Content\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap\css\bootstrap.css" />
     <Content Include="Content\bootstrap\css\bootstrap.min.css" />
-    <Content Include="Content\bootstrap\img\glyphicons-halflings-white.png" />
-    <Content Include="Content\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\bootstrap\js\bootstrap.js" />
     <Content Include="Content\bootstrap\js\bootstrap.min.js" />
-    <Content Include="Content\bootstrap\js\jquery.validate.unobtrusive-custom-for-bootstrap.js" />
-    <Content Include="Content\layout-empty.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -233,6 +215,9 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -250,7 +235,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Templates\email.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -259,14 +246,13 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Account\ChangePassword.cshtml" />
     <Content Include="Views\Account\Create.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Error\InternalServerError.cshtml" />
-    <Content Include="Views\Error\NotFound.cshtml" />
-    <Content Include="Views\Error\Unauthorized.cshtml" />
+    <Content Include="Views\ErrorBase\InternalServerError.cshtml" />
+    <Content Include="Views\ErrorBase\NotFound.cshtml" />
+    <Content Include="Views\ErrorBase\Unauthorized.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\LogOn.cshtml" />
     <Content Include="Views\Shared\_alerts.cshtml" />
@@ -282,8 +268,16 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Demo\Demo.csproj">
-      <Project>{34337581-68AC-4596-BCFE-A96B45E5682B}</Project>
+      <Project>{34337581-68ac-4596-bcfe-a96b45e5682b}</Project>
       <Name>Demo %28demo\Demo%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library.Net.Data\Library.Net.Data.csproj">
+      <Project>{ab6efdd9-70fe-4b14-940e-60bfc1f2c1c5}</Project>
+      <Name>Library.Net.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library.Net.Elmah\Library.Net.Elmah.csproj">
+      <Project>{401d6d90-87a9-445d-8ce1-fc6234a10ab1}</Project>
+      <Name>Library.Net.Elmah</Name>
     </ProjectReference>
     <ProjectReference Include="..\Library.Net.IoC.StructureMap\Library.Net.IoC.StructureMap.csproj">
       <Project>{30005A9A-24C6-4278-9013-0DC6BB939E85}</Project>
@@ -292,6 +286,10 @@
     <ProjectReference Include="..\Library.Net.IoC\Library.Net.IoC.csproj">
       <Project>{A0D5540D-3828-4106-A5DF-44CC0997E65E}</Project>
       <Name>Library.Net.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library.Net.Mvc\Library.Net.Mvc.csproj">
+      <Project>{ac2b30f8-70ac-4c6b-8fcc-d536e21cd91f}</Project>
+      <Name>Library.Net.Mvc</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

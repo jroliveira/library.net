@@ -1,16 +1,8 @@
-﻿@using appsimple.mvc.bootstrap.Lib
+﻿@using Library.Net.Mvc
 
-@if (TempData.ContainsKey(Alerts.ATTENTION)) {
-    <div class="alert alert-block">
-        <a class="close" data-dismiss="alert" href="#">x</a>
-        <h4 class="alert-heading">Atenção!</h4>
-        @TempData[Alerts.ATTENTION]
-    </div>
-}
-@foreach(var key in Alerts.ALL.Except(new[] {Alerts.ATTENTION})) {
-    if (!TempData.ContainsKey(key)) { continue; }
-    <div class="alert alert-@key">
-        <button type="button" class="close" data-dismiss="alert">x</button>
-        @TempData[key]
+@foreach (var type in Alerts.ALL.Where(type => TempData.ContainsKey(type))) {
+    <div class="alert alert-@type">
+        <button data-dismiss="alert" class="close" type="button">x</button>
+        @TempData[type]
     </div>
 }

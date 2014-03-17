@@ -6,7 +6,7 @@ namespace Library.Net.Mvc.Controllers {
 
         public ActionResult Attention(string message, ActionResult actionResult) {
             TempData.Clear();
-            TempData.Add(Alerts.ATTENTION, message);
+            TempData.Add(Alerts.WARNING, message);
 
             return actionResult;
         }
@@ -39,7 +39,7 @@ namespace Library.Net.Mvc.Controllers {
 
         public ActionResult Error(string message, ActionResult actionResult) {
             TempData.Clear();
-            TempData.Add(Alerts.ERROR, message);
+            TempData.Add(Alerts.DANGER, message);
 
             return actionResult;
         }

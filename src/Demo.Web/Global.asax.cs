@@ -19,14 +19,14 @@ namespace Demo.Web {
         protected void Application_Start() {
             AreaRegistration.RegisterAllAreas();
 
+            DependencyContainerHelper.Init(new StructureMapContainer());
+            ControllerBuilder.Current.SetControllerFactory(new DependencyContainerControllerFactory());
+
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             new JsonpFormatterRegister().Register(GlobalConfiguration.Configuration.Formatters);
-
-            DependencyContainerHelper.Init(new StructureMapContainer());
-            ControllerBuilder.Current.SetControllerFactory(new DependencyContainerControllerFactory());
         }
     }
 }

@@ -9,29 +9,33 @@ namespace Demo.Web.App_Start {
             routes.MapRoute(
                 "Error",
                 "erro",
-                new { controller = "Error", action = "InternalServerError" },
-                new { httpMethod = new HttpMethodConstraint("Get") }
+                new { controller = "ErrorBase", action = "InternalServerError" },
+                new { httpMethod = new HttpMethodConstraint("Get") },
+                new[] { "Library.Net.Mvc.Controllers" }
             );
 
             routes.MapRoute(
                 "NotFound",
                 "pagina-nao-encontrada",
-                new { controller = "Error", action = "NotFound" },
-                new { httpMethod = new HttpMethodConstraint("Get") }
+                new { controller = "ErrorBase", action = "NotFound" },
+                new { httpMethod = new HttpMethodConstraint("Get") },
+                new[] { "Library.Net.Mvc.Controllers" }
             );
 
             routes.MapRoute(
                 "InternalServerError",
                 "erro-interno",
-                new { controller = "Error", action = "InternalServerError" },
-                new { httpMethod = new HttpMethodConstraint("Get") }
+                new { controller = "ErrorBase", action = "InternalServerError" },
+                new { httpMethod = new HttpMethodConstraint("Get") },
+                new[] { "Library.Net.Mvc.Controllers" }
             );
 
             routes.MapRoute(
                 "Unauthorized",
                 "nao-autorizado",
-                new { controller = "Error", action = "Unauthorized" },
-                new { httpMethod = new HttpMethodConstraint("Get") }
+                new { controller = "ErrorBase", action = "Unauthorized" },
+                new { httpMethod = new HttpMethodConstraint("Get") },
+                new[] { "Library.Net.Mvc.Controllers" }
             );
         }
 
