@@ -19,7 +19,18 @@ namespace Demo.Infrastructure.Data.Queries.PermissionQuery {
     public class HasPermissionQuery : IHasPermissionQuery {
 
         public bool GetResult(RequestParam param) {
-            var resources = new[] { "/", "/sair", "/conta/alterar-senha" };
+            var resources = new[] {
+                "/", 
+                "/sair",
+
+                "/conta/editar",
+                "/conta/alterar-senha",
+
+                "/paginas",
+                "/pagina/criar",
+                "/pagina/editar",
+                "/pagina/deletar"
+            };
 
             return resources.Any(r => r.Equals(param.Url)) && param.User.Equals("0");
         }

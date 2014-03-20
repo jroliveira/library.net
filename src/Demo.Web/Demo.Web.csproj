@@ -136,6 +136,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
@@ -146,8 +147,13 @@
     <Compile Include="Lib\Validations\CompareOldPasswordAttribute.cs" />
     <Compile Include="Models\Account\ChangePasswordViewModel.cs" />
     <Compile Include="Models\Account\CreateViewModel.cs" />
+    <Compile Include="Models\Account\EditViewModel.cs" />
     <Compile Include="Models\Account\ForgotPasswordViewModel.cs" />
     <Compile Include="Models\Login\LogOnViewModel.cs" />
+    <Compile Include="Models\Page\CreateViewModel.cs" />
+    <Compile Include="Models\Page\EditViewModel.cs" />
+    <Compile Include="Models\Page\IndexViewModel.cs" />
+    <Compile Include="Models\Page\PageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -259,6 +265,10 @@
     <Content Include="Views\Shared\_html5shiv.cshtml" />
     <Content Include="Views\Shared\_LayoutEmpty.cshtml" />
     <Content Include="Views\Shared\_validationSummary.cshtml" />
+    <Content Include="Views\Page\Index.cshtml" />
+    <Content Include="Views\Page\Edit.cshtml" />
+    <Content Include="Views\Page\Create.cshtml" />
+    <Content Include="Views\Account\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

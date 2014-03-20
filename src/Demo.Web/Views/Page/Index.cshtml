@@ -1,0 +1,43 @@
+﻿@model Demo.Web.Models.Page.IndexViewModel
+@{
+    ViewBag.Title = "Páginas";
+}
+
+<h4>
+    <span class="text-danger">projeto</span><small> páginas</small>
+</h4>
+
+<hr />
+
+<span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Cadastrar <a id="create" class="btn btn-link" href="@Url.Action("Create")">página</a>
+<hr />
+<div class="panel panel-default">
+    <div class="panel-heading">Páginas</div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var page in Model.Pages) {
+                <tr>
+                    <td>page.Id</td>
+                    <td>page.Name</td>
+                    <td>
+                        <div class="btn-group pull-right">
+                            <a id="goEdit" class="btn btn-sm btn-info" href="@Url.Action("Edit", new { id = page.Id })">
+                                <i class="glyphicon glyphicon-edit"></i>
+                            </a>
+                            <a id="destroy" class="btn btn-sm btn-danger" href="@Url.Action("Delete", new { id = page.Id })">
+                                <i class="glyphicon glyphicon-minus-sign"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

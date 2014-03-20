@@ -69,20 +69,15 @@ namespace Demo.Web.Controllers {
             if (!ModelState.IsValid) return Error("Existem campos para preencher.", View(viewModel));
 
             try {
-                //TODO: Salva.
+                //TODO: Criar conta.
 
-                Success("Conta salva com sucesso!");
+                Success("Conta criada com sucesso!");
             }
             catch {
-                Error("Erro ao salvar a conta!");
+                Error("Erro ao criar a conta!");
             }
 
             return RedirectToAction("LogOn", "Login");
-        }
-
-        [HttpGet]
-        public ActionResult Edit() {
-            throw new NotImplementedException();
         }
 
         [HttpGet]
@@ -110,6 +105,29 @@ namespace Demo.Web.Controllers {
             //TODO: Salva.
 
             return Information("A nova senha foi enviada para o email informado.", RedirectToAction("LogOn", "Login"));
+        }
+
+        [HttpGet]
+        public ActionResult Edit() {
+            var viewModel = new EditViewModel();
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(EditViewModel viewModel) {
+            if (!ModelState.IsValid) return Error("Existem campos para preencher.", View(viewModel));
+
+            try {
+                //TODO: Editar conta.
+
+                Success("Conta editada com sucesso!");
+            }
+            catch {
+                Error("Erro ao editar a conta!");
+            }
+
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet]

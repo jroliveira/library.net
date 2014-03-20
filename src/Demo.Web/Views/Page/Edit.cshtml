@@ -1,0 +1,55 @@
+﻿@model Demo.Web.Models.Page.EditViewModel
+@{
+    ViewBag.Title = "Editar página";
+}
+
+<h4>
+    <span class="text-danger">projeto</span> <small>editar página</small>
+</h4>
+
+<hr />
+
+@using (Html.BeginForm("Edit", "Page", FormMethod.Post, new { @class = "form-horizontal" })) {
+
+    Html.ValidationSummary(true);
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.Id, new { @class = "col-sm-2 control-label" })
+        <div class="col-sm-4">
+            <div class="input-group">
+                <span class="input-group-addon"><span>#</span></span>
+                @Html.TextBoxFor(m => m.Id, new { @class = "form-control", disabled = "disabled" })
+            </div>
+            @Html.ValidationMessageFor(m => m.Id, null, new { @class = "help-block" })
+        </div>
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name, new { @class = "col-sm-2 control-label" })
+        <div class="col-sm-4">
+            <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-file"></span></span>
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            </div>
+            @Html.ValidationMessageFor(m => m.Name, null, new { @class = "help-block" })
+        </div>
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.Url, new { @class = "col-sm-2 control-label" })
+        <div class="col-sm-4">
+            <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-link"></span></span>
+                @Html.TextBoxFor(m => m.Url, new { @class = "form-control" })
+            </div>
+            @Html.ValidationMessageFor(m => m.Url, null, new { @class = "help-block" })
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <a href="@Url.Action("Index")" class="btn btn-link"><span class="glyphicon glyphicon-circle-arrow-left"></span>&nbsp; Voltar</a>
+            <button type="submit" class="btn btn-success">Enviar</button>
+        </div>
+    </div>
+}

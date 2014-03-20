@@ -14,9 +14,6 @@ namespace Demo.Web.App_Start {
                 // query validate
                 "~/Scripts/jquery.validate*",
 
-                // modernizr
-                "~/Scripts/modernizr-*",
-
                 // twitter bootstrap
                 "~/Content/bootstrap/js/bootstrap.js",
 

@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace Demo.Web.App_Start {
@@ -100,6 +99,36 @@ namespace Demo.Web.App_Start {
             );
         }
 
+        private static void PageRegisterRoutes(RouteCollection routes) {
+            routes.MapRoute(
+                "Pages",
+                "paginas",
+                new { controller = "Page", action = "Index" },
+                new { httpMethod = new HttpMethodConstraint("Get") }
+            );
+
+            routes.MapRoute(
+                "CreatePage",
+                "pagina/criar",
+                new { controller = "Page", action = "Create" },
+                new { httpMethod = new HttpMethodConstraint("Get", "Post") }
+            );
+
+            routes.MapRoute(
+                "EditPage",
+                "pagina/editar/{id}",
+                new { controller = "Page", action = "Edit" },
+                new { httpMethod = new HttpMethodConstraint("Get", "Post") }
+            );
+
+            routes.MapRoute(
+                "DeletePage",
+                "pagina/deletar/{id}",
+                new { controller = "Page", action = "Delete" },
+                new { httpMethod = new HttpMethodConstraint("Post") }
+            );
+        }
+
         public static void RegisterRoutes(RouteCollection routes) {
             routes.IgnoreRoute("elmah.axd");
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
@@ -107,6 +136,7 @@ namespace Demo.Web.App_Start {
             LoginRegisterRoutes(routes);
             AccountRegisterRoutes(routes);
             ErrorRegisterRoutes(routes);
+            PageRegisterRoutes(routes);
 
             routes.MapRoute(
                 name: "Default",
