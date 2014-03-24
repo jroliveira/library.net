@@ -53,7 +53,7 @@
     <Compile Include="Alerts.cs" />
     <Compile Include="Attributes\AjaxOnlyAttribute.cs" />
     <Compile Include="Attributes\ButtonAttribute.cs" />
-    <Compile Include="Attributes\NoCacheAttribute.cs" />
+    <Compile Include="Filters\NoCacheAttribute.cs" />
     <Compile Include="Attributes\NonAjaxOnlyAttribute.cs" />
     <Compile Include="Authentication\CurrentAuthenticatedUser.cs" />
     <Compile Include="Authentication\IAuthenticatedUser.cs" />

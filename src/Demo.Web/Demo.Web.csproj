@@ -144,6 +144,7 @@
     </Compile>
     <Compile Include="Lib\Attributes\AllowAttribute.cs" />
     <Compile Include="Lib\Authentication\AuthenticatedUser.cs" />
+    <Compile Include="Lib\Filters\LogActionFilter.cs" />
     <Compile Include="Lib\Validations\CompareOldPasswordAttribute.cs" />
     <Compile Include="Models\Account\ChangePasswordViewModel.cs" />
     <Compile Include="Models\Account\CreateViewModel.cs" />
@@ -272,6 +273,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Lib\Logging\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

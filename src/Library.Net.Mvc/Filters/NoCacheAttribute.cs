@@ -2,7 +2,7 @@
 using System.Web;
 using System.Web.Mvc;
 
-namespace Library.Net.Mvc.Attributes {
+namespace Library.Net.Mvc.Filters {
 
     public class NoCacheAttribute : ActionFilterAttribute {
 

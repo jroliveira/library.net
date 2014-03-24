@@ -4,7 +4,7 @@ using System.Web.Mvc;
 using Library.Net.IoC;
 using NHibernate;
 
-namespace Library.Net.Data.NHibernate.Mvc.Attributes {
+namespace Library.Net.Data.NHibernate.Mvc.Filters {
 
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
     public class TransactionPerRequestAttribute : ActionFilterAttribute {

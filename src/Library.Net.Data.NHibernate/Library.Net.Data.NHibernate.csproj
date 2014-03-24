@@ -56,8 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Factories\SessionFactoryFactory.cs" />
-    <Compile Include="Mvc\Attributes\TransactionPerRequestAttribute.cs" />
-    <Compile Include="Mvc\Attributes\NHibernateSessionAttribute.cs" />
+    <Compile Include="Mvc\Filters\TransactionPerRequestAttribute.cs" />
+    <Compile Include="Mvc\Filters\NHibernateSessionAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

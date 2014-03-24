@@ -5,7 +5,7 @@ using Library.Net.IoC;
 using NHibernate;
 using NHibernate.Context;
 
-namespace Library.Net.Data.NHibernate.Mvc.Attributes {
+namespace Library.Net.Data.NHibernate.Mvc.Filters {
 
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
     public class NHibernateSessionAttribute : ActionFilterAttribute {

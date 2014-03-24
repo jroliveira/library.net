@@ -55,6 +55,10 @@
     <Compile Include="Infrastructure\Data\Queries\AccountQuery\GetByEmailQuery.cs" />
     <Compile Include="Infrastructure\Data\Queries\AccountQuery\GetByIdQuery.cs" />
     <Compile Include="Infrastructure\IoC\StructureMapContainer.cs" />
+    <Compile Include="Infrastructure\Logging\Logger.cs" />
+    <Compile Include="Infrastructure\Logging\ILogger.cs" />
+    <Compile Include="Infrastructure\Logging\LogAction.cs" />
+    <Compile Include="Infrastructure\Logging\LogParameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
