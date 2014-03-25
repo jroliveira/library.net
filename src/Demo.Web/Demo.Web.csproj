@@ -47,10 +47,37 @@
     <Reference Include="Elmah">
       <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
     </Reference>
+    <Reference Include="Library.Net, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Library.Net.1.0.0.2\lib\net45\Library.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Library.Net.Data, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Library.Net.Data.1.0.0.1\lib\net45\Library.Net.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Library.Net.Elmah">
+      <HintPath>..\packages\Library.Net.Elmah.1.0.0.3\lib\net45\Library.Net.Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Library.Net.IoC, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Library.Net.IoC.1.0.0.1\lib\net45\Library.Net.IoC.dll</HintPath>
+    </Reference>
+    <Reference Include="Library.Net.IoC.StructureMap, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Library.Net.IoC.StructureMap.1.0.0.0\lib\net45\Library.Net.IoC.StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="Library.Net.Mvc, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Library.Net.Mvc.1.0.0.2\lib\net45\Library.Net.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap, Version=2.6.4.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -145,6 +172,7 @@
     <Compile Include="Lib\Attributes\AllowAttribute.cs" />
     <Compile Include="Lib\Authentication\AuthenticatedUser.cs" />
     <Compile Include="Lib\Filters\LogActionFilter.cs" />
+    <Compile Include="Lib\Menu\MenuHelper.cs" />
     <Compile Include="Lib\Validations\CompareOldPasswordAttribute.cs" />
     <Compile Include="Models\Account\ChangePasswordViewModel.cs" />
     <Compile Include="Models\Account\CreateViewModel.cs" />
@@ -262,14 +290,16 @@
     <Content Include="Views\ErrorBase\Unauthorized.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\LogOn.cshtml" />
-    <Content Include="Views\Shared\_alerts.cshtml" />
-    <Content Include="Views\Shared\_html5shiv.cshtml" />
+    <Content Include="Views\Shared\_Alerts.cshtml" />
+    <Content Include="Views\Shared\_Html5shiv.cshtml" />
     <Content Include="Views\Shared\_LayoutEmpty.cshtml" />
-    <Content Include="Views\Shared\_validationSummary.cshtml" />
+    <Content Include="Views\Shared\_ValidationSummary.cshtml" />
     <Content Include="Views\Page\Index.cshtml" />
     <Content Include="Views\Page\Edit.cshtml" />
     <Content Include="Views\Page\Create.cshtml" />
     <Content Include="Views\Account\Edit.cshtml" />
+    <Content Include="Views\Shared\_Menu.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -282,26 +312,6 @@
     <ProjectReference Include="..\Demo\Demo.csproj">
       <Project>{34337581-68ac-4596-bcfe-a96b45e5682b}</Project>
       <Name>Demo %28demo\Demo%29</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Library.Net.Data\Library.Net.Data.csproj">
-      <Project>{ab6efdd9-70fe-4b14-940e-60bfc1f2c1c5}</Project>
-      <Name>Library.Net.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Library.Net.Elmah\Library.Net.Elmah.csproj">
-      <Project>{401d6d90-87a9-445d-8ce1-fc6234a10ab1}</Project>
-      <Name>Library.Net.Elmah</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Library.Net.IoC.StructureMap\Library.Net.IoC.StructureMap.csproj">
-      <Project>{30005A9A-24C6-4278-9013-0DC6BB939E85}</Project>
-      <Name>Library.Net.IoC.StructureMap</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Library.Net.IoC\Library.Net.IoC.csproj">
-      <Project>{A0D5540D-3828-4106-A5DF-44CC0997E65E}</Project>
-      <Name>Library.Net.IoC</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Library.Net.Mvc\Library.Net.Mvc.csproj">
-      <Project>{ac2b30f8-70ac-4c6b-8fcc-d536e21cd91f}</Project>
-      <Name>Library.Net.Mvc</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

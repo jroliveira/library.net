@@ -12,12 +12,10 @@
     @Styles.Render("~/css")
 
     @RenderSection("head", false)
-    @Html.Partial("_html5shiv")
+    @Html.Partial("_Html5shiv")
 
     <style type="text/css">
-        .vertical-offset-100 {
-            padding-top: 100px;
-        }
+        .vertical-offset-100 { padding-top: 100px; }
     </style>
 </head>
 <body>
@@ -40,7 +38,7 @@
 
         <article>
             <div class="container">
-                @Html.Partial("_alerts")
+                @Html.Partial("_Alerts")
 
                 @RenderBody()
             </div>
@@ -49,11 +47,7 @@
         <div id="push"></div>
     </div>
 
-    <div id="footer">
-        <div class="container">
-            <p class="muted credit">&copy; <a href="http://junioro.wordpress.com" rel="author">Júnior Oliveira</a> @DateTime.Now.ToString("yyyy").</p>
-        </div>
-    </div>
+    @Html.Partial("_Footer")
 
     @Scripts.Render("~/js")
     @RenderSection("scripts", false)

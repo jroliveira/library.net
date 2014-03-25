@@ -1,8 +1,4 @@
-﻿@using Demo.Web.Lib.Authentication
-@using Library.Net.Mvc.Authentication
-@{ var user = new CurrentAuthenticatedUser<AuthenticatedUser>().Get(); }
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title>@ViewBag.Title</title>
@@ -16,54 +12,18 @@
     @Styles.Render("~/css")
 
     @RenderSection("head", false)
-    @Html.Partial("_html5shiv")
+    @Html.Partial("_Html5shiv")
 </head>
 <body>
     <div id="wrap">
         <header>
-            <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="@Url.Action("Index", "Home")">projeto</a>
-                    </div>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <span class="glyphicon glyphicon-plus"></span>&nbsp; Cadastrar <b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="@Url.Action("Index", "Page")"><i class="glyphicon glyphicon-file"></i>&nbsp; Páginas</a></li>
-                                    <li class="divider"></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">@user.Email <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="@Url.Action("Edit", "Account")"><span class="glyphicon glyphicon-edit"></span>&nbsp; Editar conta</a></li>
-                                    <li><a href="@Url.Action("ChangePassword", "Account")"><i class="glyphicon glyphicon-lock"></i>&nbsp; Alterar senha</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="@Url.Action("LogOff", "Login")"><span class="glyphicon glyphicon-log-out"></span>&nbsp; Sair</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            @Html.Partial("_Menu")
         </header>
 
         <article>
             <div class="container">
-                @Html.Partial("_alerts")
-                @Html.Partial("_validationSummary")
+                @Html.Partial("_Alerts")
+                @Html.Partial("_ValidationSummary")
 
                 @RenderBody()
             </div>
@@ -72,11 +32,7 @@
         <div id="push"></div>
     </div>
 
-    <div id="footer">
-        <div class="container">
-            <p class="muted credit">&copy; <a href="http://junioro.wordpress.com" rel="author">Júnior Oliveira</a> @DateTime.Now.ToString("yyyy").</p>
-        </div>
-    </div>
+    @Html.Partial("_Footer")
 
     @Scripts.Render("~/js")
     @RenderSection("scripts", false)

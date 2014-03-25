@@ -35,8 +35,9 @@
     <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
-    <Reference Include="Library.Net.IoC">
-      <HintPath>..\packages\Library.Net.IoC.1.0.0.0\lib\net45\Library.Net.IoC.dll</HintPath>
+    <Reference Include="Library.Net.IoC, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Library.Net.IoC.1.0.0.1\lib\net45\Library.Net.IoC.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

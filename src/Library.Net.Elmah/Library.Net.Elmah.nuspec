@@ -12,7 +12,7 @@
     <copyright>Copyright Júnior Oliveira 2014</copyright>
     <tags>AspNetMvc Elmah</tags>
     <dependencies>
-      <dependency id="Library.Net.Mvc" version="1.0.0.0" />
+      <dependency id="Library.Net.Mvc" version="1.0.0.2" />
       <dependency id="elmah" version="1.2.2" />
     </dependencies>
   </metadata>

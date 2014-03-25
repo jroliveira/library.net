@@ -10,10 +10,6 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <copyright>Copyright Júnior Oliveira 2014</copyright>
-    <tags>NHibernate NH AspNetMvc</tags>
-    <dependencies>
-      <dependency id="Library.Net.IoC" version="1.0.0.1" />
-      <dependency id="NHibernate" version="3.3.3.4001" />
-    </dependencies>
+    <tags>IoC StructureMap</tags>
   </metadata>
 </package>

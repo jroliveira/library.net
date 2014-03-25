@@ -35,8 +35,9 @@
     <Reference Include="Elmah">
       <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
     </Reference>
-    <Reference Include="Library.Net.Mvc">
-      <HintPath>..\packages\Library.Net.Mvc.1.0.0.0\lib\net45\Library.Net.Mvc.dll</HintPath>
+    <Reference Include="Library.Net.Mvc, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Library.Net.Mvc.1.0.0.2\lib\net45\Library.Net.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

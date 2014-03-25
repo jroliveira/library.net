@@ -3,7 +3,7 @@ using System.Runtime.Caching;
 
 namespace Library.Net.Cache {
 
-    public class DefaultCacheProvider : ICacheProvider {
+    public class MemoryCacheProvider : ICacheProvider {
 
         private static ObjectCache Cache { get { return MemoryCache.Default; } }
 

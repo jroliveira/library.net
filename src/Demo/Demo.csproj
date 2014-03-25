@@ -32,6 +32,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Library.Net.Data, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Library.Net.Data.1.0.0.1\lib\net45\Library.Net.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Library.Net.IoC, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Library.Net.IoC.1.0.0.1\lib\net45\Library.Net.IoC.dll</HintPath>
+    </Reference>
+    <Reference Include="Library.Net.IoC.StructureMap, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Library.Net.IoC.StructureMap.1.0.0.0\lib\net45\Library.Net.IoC.StructureMap.dll</HintPath>
+    </Reference>
     <Reference Include="StructureMap, Version=2.6.4.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
@@ -50,6 +62,7 @@
     <Compile Include="Domain\Entities\Account.cs" />
     <Compile Include="Domain\Entities\Entity.cs" />
     <Compile Include="Domain\Services\EmailService.cs" />
+    <Compile Include="Infrastructure\Data\Queries\MenuQuery\GetByUserQuery.cs" />
     <Compile Include="Infrastructure\Data\Queries\PermissionQuery\HasPermissionQuery.cs" />
     <Compile Include="Infrastructure\Data\QueryFactory.cs" />
     <Compile Include="Infrastructure\Data\Queries\AccountQuery\GetByEmailQuery.cs" />
@@ -59,24 +72,11 @@
     <Compile Include="Infrastructure\Logging\ILogger.cs" />
     <Compile Include="Infrastructure\Logging\LogAction.cs" />
     <Compile Include="Infrastructure\Logging\LogParameter.cs" />
+    <Compile Include="Infrastructure\Menu\MenuItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Library.Net.Data\Library.Net.Data.csproj">
-      <Project>{ab6efdd9-70fe-4b14-940e-60bfc1f2c1c5}</Project>
-      <Name>Library.Net.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Library.Net.IoC.StructureMap\Library.Net.IoC.StructureMap.csproj">
-      <Project>{30005a9a-24c6-4278-9013-0dc6bb939e85}</Project>
-      <Name>Library.Net.IoC.StructureMap</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Library.Net.IoC\Library.Net.IoC.csproj">
-      <Project>{a0d5540d-3828-4106-a5df-44cc0997e65e}</Project>
-      <Name>Library.Net.IoC</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

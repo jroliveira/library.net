@@ -26,8 +26,7 @@ namespace Demo.Web.Controllers {
 
         private Account GetAccount(string email) {
             var query = _queryFactory.CreateQuery<GetByEmailQuery>();
-            query.Email = email;
-            return query.GetResult();
+            return query.GetResult(email);
         }
 
         private bool IsValidReturnUrl(string returnUrl) {

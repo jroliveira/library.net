@@ -25,14 +25,12 @@ namespace Demo.Web.Controllers {
 
         private Account GetAccount(string email) {
             var query = _queryFactory.CreateQuery<GetByEmailQuery>();
-            query.Email = email;
-            return query.GetResult();
+            return query.GetResult(email);
         }
 
         private bool EmailExists(string email) {
             var query = _queryFactory.CreateQuery<GetByEmailQuery>();
-            query.Email = email;
-            return query.GetResult() != null;
+            return query.GetResult(email) != null;
         }
 
         #region ajax only
@@ -140,8 +138,7 @@ namespace Demo.Web.Controllers {
             if (!ModelState.IsValid) return Error("Existem campos para preencher.", View(viewModel));
 
             var query = _queryFactory.CreateQuery<GetByIdQuery>();
-            query.Id = Convert.ToInt64(User.Identity.Name);
-            var account = query.GetResult();
+            var account = query.GetResult(Convert.ToInt64(User.Identity.Name));
             account.ChangePassword(viewModel.OldPassword, viewModel.NewPassword);
 
             //TODO: Salvar.
