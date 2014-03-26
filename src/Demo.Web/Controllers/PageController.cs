@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.ObjectModel;
+using System.Web.Mvc;
 using Demo.Web.Models.Page;
 using Library.Net.Mvc.Controllers;
 
@@ -8,7 +9,14 @@ namespace Demo.Web.Controllers {
         
         [HttpGet]
         public ActionResult Index() {
-            var viewModel = new IndexViewModel();
+            var viewModel = new IndexViewModel { 
+                Pages = new Collection<PageViewModel> {
+                    new PageViewModel{ Id = 1, Name = "Página" },
+                    new PageViewModel{ Id = 1, Name = "Home" },
+                    new PageViewModel{ Id = 1, Name = "Login" },
+                    new PageViewModel{ Id = 1, Name = "Conta" }
+                }
+            };
             return View(viewModel);
         }
 
@@ -34,7 +42,7 @@ namespace Demo.Web.Controllers {
         }
 
         [HttpGet]
-        public ActionResult Edit(object id) {
+        public ActionResult Edit(long id) {
             var viewModel = new EditViewModel();
 
             return View(viewModel);
@@ -57,7 +65,7 @@ namespace Demo.Web.Controllers {
         }
 
         [HttpPost]
-        public ActionResult Delete(object id) {
+        public ActionResult Delete(long id) {
             //TODO: Deletar página.
 
             return RedirectToAction("Index");
