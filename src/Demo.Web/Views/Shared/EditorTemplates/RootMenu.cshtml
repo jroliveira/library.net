@@ -1,0 +1,14 @@
+﻿@model Demo.Infrastructure.Menu.RootMenu
+
+@if (Model.HasItems()) {
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="@Model.CssClass"></span>&nbsp; @Model.Name <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            @foreach (var item in Model.Items) {
+                @Html.EditorFor(m => item)
+            }
+        </ul>
+    </li>
+}

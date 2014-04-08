@@ -18,14 +18,16 @@
             <tr>
                 <th>#</th>
                 <th>Nome</th>
+                <th>Mostra no menu?</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
             @foreach (var page in Model.Pages) {
                 <tr>
-                    <td>page.Id</td>
-                    <td>page.Name</td>
+                    <td>@page.Id</td>
+                    <td>@page.Name</td>
+                    <td>@page.GetShowInMenu()</td>
                     <td>
                         <form method="POST" action="@Url.Action("Delete")">
                             <input type="hidden" name="id" value="@page.Id" />

@@ -173,6 +173,7 @@
     <Compile Include="Lib\Authentication\AuthenticatedUser.cs" />
     <Compile Include="Lib\Filters\LogActionFilter.cs" />
     <Compile Include="Lib\Menu\MenuHelper.cs" />
+    <Compile Include="Lib\Validations\RequiredIfAttribute.cs" />
     <Compile Include="Lib\Validations\CompareOldPasswordAttribute.cs" />
     <Compile Include="Models\Account\ChangePasswordViewModel.cs" />
     <Compile Include="Models\Account\CreateViewModel.cs" />
@@ -183,6 +184,7 @@
     <Compile Include="Models\Page\EditViewModel.cs" />
     <Compile Include="Models\Page\IndexViewModel.cs" />
     <Compile Include="Models\Page\PageViewModel.cs" />
+    <Compile Include="Models\Page\RootViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -293,17 +295,17 @@
     <Content Include="Views\Shared\_Alerts.cshtml" />
     <Content Include="Views\Shared\_Html5shiv.cshtml" />
     <Content Include="Views\Shared\_LayoutEmpty.cshtml" />
-    <Content Include="Views\Shared\_ValidationSummary.cshtml" />
     <Content Include="Views\Page\Index.cshtml" />
     <Content Include="Views\Page\Edit.cshtml" />
     <Content Include="Views\Page\Create.cshtml" />
     <Content Include="Views\Account\Edit.cshtml" />
     <Content Include="Views\Shared\_Menu.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ItemMenu.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\RootMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Lib\Logging\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

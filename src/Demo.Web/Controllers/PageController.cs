@@ -11,18 +11,23 @@ namespace Demo.Web.Controllers {
         public ActionResult Index() {
             var viewModel = new IndexViewModel { 
                 Pages = new Collection<PageViewModel> {
-                    new PageViewModel{ Id = 1, Name = "Página" },
-                    new PageViewModel{ Id = 1, Name = "Home" },
-                    new PageViewModel{ Id = 1, Name = "Login" },
-                    new PageViewModel{ Id = 1, Name = "Conta" }
+                    new PageViewModel { Id = 1, Name = "Página", ShowInMenu = true },
+                    new PageViewModel { Id = 1, Name = "Home", ShowInMenu = true },
+                    new PageViewModel { Id = 1, Name = "Login", ShowInMenu = true },
+                    new PageViewModel { Id = 1, Name = "Conta", ShowInMenu = true }
                 }
             };
+
             return View(viewModel);
         }
 
         [HttpGet]
         public ActionResult Create() {
-            return View();
+            var roots = new Collection<RootViewModel> {
+                new RootViewModel { Id = 1, Name = "Cadastrar" }
+            };
+
+            return View(new CreateViewModel { Roots = roots });
         }
 
         [HttpPost]
@@ -43,7 +48,11 @@ namespace Demo.Web.Controllers {
 
         [HttpGet]
         public ActionResult Edit(long id) {
-            var viewModel = new EditViewModel();
+            var roots = new Collection<RootViewModel> {
+                new RootViewModel { Id = 1, Name = "Cadastrar" }
+            };
+
+            var viewModel = new EditViewModel { Roots = roots };
 
             return View(viewModel);
         }

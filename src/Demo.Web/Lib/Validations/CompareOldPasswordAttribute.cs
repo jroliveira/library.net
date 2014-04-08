@@ -1,9 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using Demo.Web.Lib.Authentication;
 using Library.Net.Mvc.Authentication;
 
 namespace Demo.Web.Lib.Validations {
 
+    [AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
     public class CompareOldPasswordAttribute : ValidationAttribute {
 
         private ICurrentAuthenticatedUser<AuthenticatedUser> _currentAuthenticatedUser = new CurrentAuthenticatedUser<AuthenticatedUser>();

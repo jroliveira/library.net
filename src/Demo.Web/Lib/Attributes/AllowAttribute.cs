@@ -29,10 +29,15 @@ namespace Demo.Web.Lib.Attributes {
             var user = httpContext.User;
             if (!user.Identity.IsAuthenticated) return false;
 
-            if (httpContext.Request.Url == null) return false;
-            var url = httpContext.Request.Url.AbsolutePath;
+            var routeData = httpContext.Request.RequestContext.RouteData;
 
-            var allow = _hasPermissionQuery.GetResult(new RequestParam(user.Identity.Name, url));
+            var action = routeData.GetRequiredString("action");
+            if (string.IsNullOrEmpty(action)) return false;
+
+            var controller = routeData.GetRequiredString("controller");
+            if (string.IsNullOrEmpty(controller)) return false;
+
+            var allow = _hasPermissionQuery.GetResult(new RequestParam(user.Identity.Name, action, controller));
             if (!allow) return false;
 
             return base.AuthorizeCore(httpContext);

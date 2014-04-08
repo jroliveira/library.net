@@ -23,9 +23,9 @@ namespace Demo.Web.Lib.Menu {
             _query = query;
         }
 
-        public static IEnumerable<MenuItem> GetBy(string user) {
+        public static IEnumerable<BaseMenu> GetBy(string user) {
             if (_cacheProvider.IsSet(user))
-                return _cacheProvider.Get(user) as IEnumerable<MenuItem>;
+                return _cacheProvider.Get(user) as IEnumerable<BaseMenu>;
 
             var menu = _query.GetResult(user);
             _cacheProvider.Set(user, menu, CacheMenuInMinutes);

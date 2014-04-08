@@ -6,11 +6,13 @@ namespace Demo.Infrastructure.Data.Queries.PermissionQuery {
     public class RequestParam {
 
         public string User { get; set; }
-        public string Url { get; set; }
+        public string Action { get; set; }
+        public string Controller { get; set; }
 
-        public RequestParam(string user, string url) {
+        public RequestParam(string user, string action, string controller) {
             User = user;
-            Url = url;
+            Action = action;
+            Controller = controller;
         }
     }
 
@@ -20,19 +22,19 @@ namespace Demo.Infrastructure.Data.Queries.PermissionQuery {
 
         public bool GetResult(RequestParam param) {
             var resources = new[] {
-                "/", 
-                "/sair",
+                new { Controller = "Home", Action = "Index" },
+                new { Controller = "Login", Action = "LogOff" },
+                
+                new { Controller = "Account", Action = "Edit" },
+                new { Controller = "Account", Action = "ChangePassword" },
 
-                "/conta/editar",
-                "/conta/alterar-senha",
-
-                "/paginas",
-                "/pagina/criar",
-                "/pagina/editar",
-                "/pagina/deletar"
+                new { Controller = "Page", Action = "Index" },
+                new { Controller = "Page", Action = "Create" },
+                new { Controller = "Page", Action = "Edit" },
+                new { Controller = "Page", Action = "Delete" }
             };
 
-            return resources.Any(r => r.Equals(param.Url)) && param.User.Equals("0");
+            return resources.Any(r => r.Action.Equals(param.Action) && r.Controller.Equals(param.Controller)) && param.User.Equals("0");
         }
     }
 }

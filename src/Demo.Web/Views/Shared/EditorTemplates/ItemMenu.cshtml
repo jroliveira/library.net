@@ -1,0 +1,7 @@
+﻿@model Demo.Infrastructure.Menu.ItemMenu
+
+<li>
+    <a href="@Url.Action(Model.Action, Model.Controller)">
+        <span class="@Model.CssClass"></span>&nbsp; @Model.Name
+    </a>
+</li>
