@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Web;
 using System.Web.Mvc;
 using Demo.Web.Models.Page;
 using Library.Net.Mvc.Controllers;
@@ -48,6 +49,8 @@ namespace Demo.Web.Controllers {
 
         [HttpGet]
         public ActionResult Edit(long id) {
+            if (id < 1) throw new HttpException(404, "HTTP/1.1 404 Not Found");
+            
             var roots = new Collection<RootViewModel> {
                 new RootViewModel { Id = 1, Name = "Cadastrar" }
             };
@@ -75,6 +78,8 @@ namespace Demo.Web.Controllers {
 
         [HttpPost]
         public ActionResult Delete(long id) {
+            if (id < 1) throw new HttpException(404, "HTTP/1.1 404 Not Found");
+
             //TODO: Deletar página.
 
             return RedirectToAction("Index");

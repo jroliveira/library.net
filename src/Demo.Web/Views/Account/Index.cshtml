@@ -1,0 +1,39 @@
+﻿@model Demo.Web.Models.Account.IndexViewModel
+@{
+    ViewBag.Title = "Contas";
+}
+
+<h4>
+    <span class="text-danger">projeto</span><small> contas</small>
+</h4>
+
+<hr />
+<div class="panel panel-default">
+    <div class="panel-heading">Contas</div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var account in Model.Accounts) {
+                <tr>
+                    <td>@account.Id</td>
+                    <td>@account.Name</td>
+                    <td>@account.Email</td>
+                    <td>
+                        <div class="btn-group pull-right">
+                            <a class="btn btn-sm btn-info" href="@Url.Action("Index", "Permission", new { accountId = account.Id })">
+                                <i class="glyphicon glyphicon-lock"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

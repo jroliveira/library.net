@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Text;
 using System.Web.Mvc;
@@ -54,6 +55,18 @@ namespace Demo.Web.Controllers {
         }
 
         #endregion
+
+        [HttpGet]
+        public ActionResult Index() {
+            var viewModel = new IndexViewModel { 
+                Accounts = new Collection<AccountViewModel> {
+                    new AccountViewModel{ Id = 1, Name = "Junior", Email = "junior@gmail.com" },
+                    new AccountViewModel{ Id = 2, Name = "Oliveira", Email = "oliveira@gmail.com" }
+                }
+            };
+
+            return View(viewModel);
+        }
 
         [HttpGet]
         [AllowAnonymous]

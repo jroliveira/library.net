@@ -7,7 +7,7 @@
         public bool ShowInMenu { get; set; }
 
         public string GetShowInMenu() {
-            return ShowInMenu ? "sim" : "não";
+            return ShowInMenu ? "Sim" : "Não";
         }
     }
 }

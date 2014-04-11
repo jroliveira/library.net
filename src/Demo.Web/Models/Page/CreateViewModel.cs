@@ -16,11 +16,11 @@ namespace Demo.Web.Models.Page {
         public string CssClass { get; set; }
 
         [Display(Name = "Ação")]
-        [RequiredIfPropertyEqualToAttribute("IsRoot", false, ErrorMessage = "Campo obrigatório.")]
+        [RequiredIfPropertyEqualTo("IsRoot", false, ErrorMessage = "Campo obrigatório.")]
         public string Action { get; set; }
 
         [Display(Name = "Controlador")]
-        [RequiredIfPropertyEqualToAttribute("IsRoot", false, ErrorMessage = "Campo obrigatório.")]
+        [RequiredIfPropertyEqualTo("IsRoot", false, ErrorMessage = "Campo obrigatório.")]
         public string Controller { get; set; }
 
         [Display(Name = "Mostrar no Menu?")]

@@ -57,6 +57,13 @@ namespace Demo.Web.App_Start {
 
         private static void AccountRegisterRoutes(RouteCollection routes) {
             routes.MapRoute(
+                "Accounts",
+                "contas",
+                new { controller = "Account", action = "Index" },
+                new { httpMethod = new HttpMethodConstraint("Get") }
+            );
+
+            routes.MapRoute(
                 "ForgotPasswordAccount",
                 "conta/esqueci-minha-senha",
                 new { controller = "Account", action = "ForgotPassword" },
@@ -129,6 +136,22 @@ namespace Demo.Web.App_Start {
             );
         }
 
+        private static void PermissionRegisterRoutes(RouteCollection routes) {
+            routes.MapRoute(
+                "Permissions",
+                "permissoes/{accountId}",
+                new { controller = "Permission", action = "Index" },
+                new { httpMethod = new HttpMethodConstraint("Get") }
+            );
+
+            routes.MapRoute(
+                "Permission",
+                "permissao/{accountId}/{pageId}",
+                new { controller = "Permission", action = "Permission" },
+                new { httpMethod = new HttpMethodConstraint("Post") }
+            );
+        }
+
         public static void RegisterRoutes(RouteCollection routes) {
             routes.IgnoreRoute("elmah.axd");
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
@@ -137,6 +160,7 @@ namespace Demo.Web.App_Start {
             AccountRegisterRoutes(routes);
             ErrorRegisterRoutes(routes);
             PageRegisterRoutes(routes);
+            PermissionRegisterRoutes(routes);
 
             routes.MapRoute(
                 name: "Default",

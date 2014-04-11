@@ -13,37 +13,36 @@
 <hr />
 <div class="panel panel-default">
     <div class="panel-heading">Páginas</div>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Nome</th>
-                <th>Mostra no menu?</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var page in Model.Pages) {
+    
+    <form method="POST" action="@Url.Action("Delete")">
+        <table class="table table-striped">
+            <thead>
                 <tr>
-                    <td>@page.Id</td>
-                    <td>@page.Name</td>
-                    <td>@page.GetShowInMenu()</td>
-                    <td>
-                        <form method="POST" action="@Url.Action("Delete")">
-                            <input type="hidden" name="id" value="@page.Id" />
-
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>Mostra no menu?</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var page in Model.Pages) {
+                    <tr>
+                        <td>@page.Id</td>
+                        <td>@page.Name</td>
+                        <td>@page.GetShowInMenu()</td>
+                        <td>
                             <div class="btn-group pull-right">
                                 <a class="btn btn-sm btn-info" href="@Url.Action("Edit", new { id = page.Id })">
                                     <i class="glyphicon glyphicon-edit"></i>
                                 </a>
-                                <button onclick="return confirm('Tem certeza que deseja deletar?')" type="submit" class="btn btn-sm btn-danger">
+                                <button name="id" value="@page.Id" onclick="return confirm('Tem certeza que deseja deletar?')" type="submit" class="btn btn-sm btn-danger">
                                     <i class="glyphicon glyphicon-minus-sign"></i>
                                 </button>
                             </div>
-                        </form>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </form>
 </div>

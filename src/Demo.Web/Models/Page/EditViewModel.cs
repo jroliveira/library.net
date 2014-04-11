@@ -24,7 +24,7 @@ namespace Demo.Web.Models.Page {
         public string Action { get; set; }
 
         [Display(Name = "Controlador")]
-        [RequiredIfPropertyEqualToAttribute("IsRoot", false, ErrorMessage = "Campo obrigatório.")]
+        [RequiredIfPropertyEqualTo("IsRoot", false, ErrorMessage = "Campo obrigatório.")]
         public string Controller { get; set; }
 
         [Display(Name = "Mostrar no Menu?")]
@@ -34,8 +34,6 @@ namespace Demo.Web.Models.Page {
         public bool IsRoot { get; set; }
 
         [Display(Name = "Base")]
-        [RequiredIfPropertyEqualToAttribute("ShowInMenu", true, ErrorMessage = "Campo obrigatório.")]
-        [RequiredIfPropertyEqualToAttribute("IsRoot", false, ErrorMessage = "Campo obrigatório.")]
         public int RootId { get; set; }
 
         public IList<RootViewModel> Roots { get; set; }

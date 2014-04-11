@@ -17,7 +17,7 @@ namespace Demo.Infrastructure.Data.Queries.MenuQuery {
             return new Collection<BaseMenu> {
                 new RootMenu { Name = "Cadastrar", CssClass = "glyphicon glyphicon-plus", Items = new Collection<ItemMenu> {
                     new ItemMenu { Action = "Index", Controller = "Page", Name = "Página", CssClass = "glyphicon glyphicon-file" }}},
-                new ItemMenu { Action = "Index", Controller = "Page", Name = "Página", CssClass = "glyphicon glyphicon-file" }
+                new ItemMenu { Action = "Index", Controller = "Account", Name = "Contas", CssClass = "glyphicon glyphicon-user" }
             };
         }
     }

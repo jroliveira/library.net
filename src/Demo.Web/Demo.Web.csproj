@@ -166,6 +166,7 @@
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PermissionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -175,7 +176,9 @@
     <Compile Include="Lib\Menu\MenuHelper.cs" />
     <Compile Include="Lib\Validations\RequiredIfAttribute.cs" />
     <Compile Include="Lib\Validations\CompareOldPasswordAttribute.cs" />
+    <Compile Include="Models\Account\AccountViewModel.cs" />
     <Compile Include="Models\Account\ChangePasswordViewModel.cs" />
+    <Compile Include="Models\Account\IndexViewModel.cs" />
     <Compile Include="Models\Account\CreateViewModel.cs" />
     <Compile Include="Models\Account\EditViewModel.cs" />
     <Compile Include="Models\Account\ForgotPasswordViewModel.cs" />
@@ -185,6 +188,8 @@
     <Compile Include="Models\Page\IndexViewModel.cs" />
     <Compile Include="Models\Page\PageViewModel.cs" />
     <Compile Include="Models\Page\RootViewModel.cs" />
+    <Compile Include="Models\Permission\PageViewModel.cs" />
+    <Compile Include="Models\Permission\IndexViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -303,6 +308,8 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\ItemMenu.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\RootMenu.cshtml" />
+    <Content Include="Views\Permission\Index.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

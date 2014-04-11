@@ -1,0 +1,49 @@
+﻿@model Demo.Web.Models.Permission.IndexViewModel
+@{
+    ViewBag.Title = "Permissões";
+}
+
+<h4>
+    <span class="text-danger">projeto</span><small> permissões</small>
+</h4>
+
+<hr />
+<div class="panel panel-default">
+    <div class="panel-heading">Permissões</div>
+    
+    <form method="POST" action="@Url.Action("Permission")">
+        <input type="hidden" name="accountId" value="@Model.AccountId" />
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>Ação</th>
+                    <th>Controlador</th>
+                    <th>Concedido?</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var page in Model.Pages) {
+                    <tr class="@page.GetTextColor()">
+                        <td>@page.Id</td>
+                        <td>@page.Name</td>
+                        <td>@page.Action</td>
+                        <td>@page.Controller</td>
+                        <td>@page.GetText()</td>
+                        <td>
+                            <div class="btn-group pull-right">
+                                <button name="@page.GetNameButton()" value="@page.Id" onclick="return confirm('Tem certeza que deseja realizar esta operação?')" 
+                                    type="submit" class="btn btn-sm @page.GetColorButton()">
+                                    <i class="@page.GetIconButton()"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </form>
+</div>
