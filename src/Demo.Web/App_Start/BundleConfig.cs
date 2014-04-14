@@ -15,10 +15,7 @@ namespace Demo.Web.App_Start {
                 "~/Scripts/jquery.validate*",
 
                 // twitter bootstrap
-                "~/Content/bootstrap/js/bootstrap.js",
-
-                // application
-                "~/Script/script.js"));
+                "~/Content/bootstrap/js/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/css").Include(
                 // twitter bootstrap
