@@ -1,0 +1,6 @@
+language: csharp
+solution: ./src/library.net.sln
+install:
+  - nuget restore ./src/library.net.sln
+script:
+  - xbuild /p:Configuration=Release ./src/library.net.sln
