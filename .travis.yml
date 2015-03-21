@@ -4,6 +4,6 @@ env:
  matrix:
   - MONO_VERSION="3.8.0"
 install:
- - nuget restore library.net.sln
+ - travis_retry nuget restore library.net.sln
 script:
- - xbuild /p:Configuration=Release library.net.sln
+ - xbuild /verbosity:minimal /p:Configuration=Release library.net.sln
