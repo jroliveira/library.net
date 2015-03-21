@@ -1,8 +1,0 @@
-﻿@using Library.Net.Mvc
-
-@foreach (var type in Alerts.ALL.Where(type => TempData.ContainsKey(type))) {
-    <div class="alert alert-@type">
-        <button data-dismiss="alert" class="close" type="button">x</button>
-        @TempData[type]
-    </div>
-}

@@ -1,9 +1,9 @@
 language: csharp
-solution: ./src/library.net.sln
+solution: library.net.sln
 env:
  matrix:
   - MONO_VERSION="3.8.0"
 install:
- - nuget restore ./src/library.net.sln
+ - nuget restore library.net.sln
 script:
- - xbuild /p:Configuration=Release ./src/library.net.sln
+ - xbuild /p:Configuration=Release library.net.sln
