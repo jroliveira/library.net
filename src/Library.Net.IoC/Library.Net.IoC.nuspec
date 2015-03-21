@@ -9,7 +9,10 @@
     <projectUrl>https://github.com/junioro/library.net</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <copyright>Copyright Júnior Oliveira 2014</copyright>
+    <copyright>Copyright Júnior Oliveira 2015</copyright>
     <tags>IoC</tags>
+    <dependencies>
+      <dependency id="Microsoft.AspNet.Mvc" version="5.2.3" />
+    </dependencies>
   </metadata>
 </package>

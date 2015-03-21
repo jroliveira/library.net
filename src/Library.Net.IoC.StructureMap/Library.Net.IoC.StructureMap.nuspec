@@ -9,7 +9,12 @@
     <projectUrl>https://github.com/junioro/library.net</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <copyright>Copyright Júnior Oliveira 2014</copyright>
+    <copyright>Copyright Júnior Oliveira 2015</copyright>
     <tags>IoC StructureMap</tags>
+    <dependencies>
+      <dependency id="Library.Net.IoC" version="1.0.0.2" />
+      <dependency id="structuremap" version="3.1.4.143" />
+      <dependency id="Microsoft.AspNet.Mvc" version="5.2.3" />
+    </dependencies>
   </metadata>
 </package>

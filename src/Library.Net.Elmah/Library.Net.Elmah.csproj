@@ -36,9 +36,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
     </Reference>
-    <Reference Include="Library.Net.Mvc, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Library.Net.Mvc, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Library.Net.Mvc.1.0.0.2\lib\net45\Library.Net.Mvc.dll</HintPath>
+      <HintPath>..\..\packages\Library.Net.Mvc.1.0.0.3\lib\net45\Library.Net.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
