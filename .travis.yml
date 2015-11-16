@@ -3,7 +3,5 @@ solution: library.net.sln
 env:
  matrix:
   - MONO_VERSION="3.8.0"
-install:
- - travis_retry nuget restore library.net.sln
 script:
  - xbuild /verbosity:minimal /p:Configuration=Release library.net.sln
