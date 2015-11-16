@@ -19,6 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "~", "~", "{2E786ACC-685E-41
 		.travis.yml = .travis.yml
 		appveyor.yml = appveyor.yml
 		Gemfile = Gemfile
+		nugets_pack.bat = nugets_pack.bat
 		Rakefile = Rakefile
 		README.md = README.md
 	EndProjectSection

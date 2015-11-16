@@ -1,0 +1,2 @@
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild src\Library.Net\Library.Net.csproj /p:Configuration=Release
+.nuget\NuGet.exe pack src\Library.Net\Library.Net.csproj -OutputDirectory src\Library.Net\bin\Release -Prop Configuration=Release

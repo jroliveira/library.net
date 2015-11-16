@@ -10,7 +10,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <copyright>Copyright Júnior Oliveira 2015</copyright>
-    <tags>Cache AspNetMvc Data IoC</tags>
+    <tags>cache aspnetmvc data ioc</tags>
     <dependencies>
       <dependency id="Newtonsoft.Json" version="7.0.1" />
     </dependencies>
